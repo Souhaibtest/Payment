@@ -1,0 +1,3281 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "5",
+  "dialect": "mysql",
+  "tables": {
+    "migrations": {
+      "name": "migrations",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(10) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "migration": {
+          "autoincrement": false,
+          "name": "migration",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "batch": {
+          "autoincrement": false,
+          "name": "batch",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_beneficiaries": {
+      "name": "tec_beneficiaries",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "type",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_beneficiary": {
+      "name": "tec_beneficiary",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "default": "''''''",
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_categories": {
+      "name": "tec_categories",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "code": {
+          "autoincrement": false,
+          "name": "code",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "image": {
+          "default": "'''no_image.png'''",
+          "autoincrement": false,
+          "name": "image",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_combo_items": {
+      "name": "tec_combo_items",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_id": {
+          "autoincrement": false,
+          "name": "product_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_code": {
+          "autoincrement": false,
+          "name": "item_code",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "decimal(12,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cost": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cost",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_customers": {
+      "name": "tec_customers",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf1": {
+          "autoincrement": false,
+          "name": "cf1",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf2": {
+          "autoincrement": false,
+          "name": "cf2",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "phone": {
+          "autoincrement": false,
+          "name": "phone",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "store_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "montant_apayer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "montant_apayer",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_expenses": {
+      "name": "tec_expenses",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "default": "'current_timestamp()'",
+          "autoincrement": false,
+          "name": "date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reference": {
+          "autoincrement": false,
+          "name": "reference",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "note",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_by": {
+          "autoincrement": false,
+          "name": "created_by",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attachment": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "attachment",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "store_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "beneficiary_name": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "beneficiary_name",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "beneficiary_id": {
+          "autoincrement": false,
+          "name": "beneficiary_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "year_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "year_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_gift_cards": {
+      "name": "tec_gift_cards",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "default": "'current_timestamp()'",
+          "autoincrement": false,
+          "name": "date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "card_no": {
+          "autoincrement": false,
+          "name": "card_no",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "value": {
+          "autoincrement": false,
+          "name": "value",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "customer_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "customer_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "balance": {
+          "autoincrement": false,
+          "name": "balance",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expiry": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "expiry",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "created_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "store_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {
+        "card_no": {
+          "name": "card_no",
+          "columns": [
+            "card_no"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "tec_groups": {
+      "name": "tec_groups",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "mediumint(8) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "autoincrement": false,
+          "name": "description",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_login_attempts": {
+      "name": "tec_login_attempts",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "mediumint(8) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ip_address": {
+          "autoincrement": false,
+          "name": "ip_address",
+          "type": "varbinary(16)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "login": {
+          "autoincrement": false,
+          "name": "login",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "time": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "time",
+          "type": "int(11) unsigned",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_payments": {
+      "name": "tec_payments",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "default": "'current_timestamp()'",
+          "autoincrement": false,
+          "name": "date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sale_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "sale_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "customer_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "customer_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "transaction_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "transaction_id",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paid_by": {
+          "autoincrement": false,
+          "name": "paid_by",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cheque_no": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cheque_no",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cc_no": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cc_no",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cc_holder": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cc_holder",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cc_month": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cc_month",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cc_year": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cc_year",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cc_type": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cc_type",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "currency": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "currency",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_by": {
+          "autoincrement": false,
+          "name": "created_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attachment": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "attachment",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "note": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "note",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pos_paid": {
+          "default": "'0.0000'",
+          "autoincrement": false,
+          "name": "pos_paid",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pos_balance": {
+          "default": "'0.0000'",
+          "autoincrement": false,
+          "name": "pos_balance",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "gc_no": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "gc_no",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reference": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "reference",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "updated_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_at": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "store_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_printers": {
+      "name": "tec_printers",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "autoincrement": false,
+          "name": "title",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "autoincrement": false,
+          "name": "type",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "profile": {
+          "autoincrement": false,
+          "name": "profile",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "char_per_line": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "char_per_line",
+          "type": "tinyint(3) unsigned",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "path": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "path",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ip_address": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "ip_address",
+          "type": "varbinary(45)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "port": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "port",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_products": {
+      "name": "tec_products",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "code": {
+          "autoincrement": false,
+          "name": "code",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "char(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "category_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "category_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "autoincrement": false,
+          "name": "price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "image": {
+          "default": "'''no_image.png'''",
+          "autoincrement": false,
+          "name": "image",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "tax",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cost": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cost",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tax_method": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "tax_method",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "quantity": {
+          "default": "'0.0000'",
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "barcode_symbology": {
+          "default": "'''code39'''",
+          "autoincrement": false,
+          "name": "barcode_symbology",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "default": "'''standard'''",
+          "autoincrement": false,
+          "name": "type",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "details": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "details",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "alert_quantity": {
+          "default": "'0.0000'",
+          "autoincrement": false,
+          "name": "alert_quantity",
+          "type": "decimal(10,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "year_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "year_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {
+        "code": {
+          "name": "code",
+          "columns": [
+            "code"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "tec_product_store_qty": {
+      "name": "tec_product_store_qty",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_id": {
+          "autoincrement": false,
+          "name": "product_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "store_id": {
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "default": "'0.0000'",
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "product_id": {
+          "name": "product_id",
+          "columns": [
+            "product_id"
+          ],
+          "isUnique": false
+        },
+        "store_id": {
+          "name": "store_id",
+          "columns": [
+            "store_id"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_purchases": {
+      "name": "tec_purchases",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reference": {
+          "autoincrement": false,
+          "name": "reference",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "default": "'current_timestamp()'",
+          "autoincrement": false,
+          "name": "date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note": {
+          "autoincrement": false,
+          "name": "note",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "autoincrement": false,
+          "name": "total",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "attachment": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "attachment",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "supplier_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "supplier_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "received": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "received",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_by": {
+          "autoincrement": false,
+          "name": "created_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "store_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_purchase_items": {
+      "name": "tec_purchase_items",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "purchase_id": {
+          "autoincrement": false,
+          "name": "purchase_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_id": {
+          "autoincrement": false,
+          "name": "product_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cost": {
+          "autoincrement": false,
+          "name": "cost",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "subtotal": {
+          "autoincrement": false,
+          "name": "subtotal",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_registers": {
+      "name": "tec_registers",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "default": "'current_timestamp()'",
+          "autoincrement": false,
+          "name": "date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "user_id": {
+          "autoincrement": false,
+          "name": "user_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cash_in_hand": {
+          "autoincrement": false,
+          "name": "cash_in_hand",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_cash": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_cash",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_cheques": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_cheques",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_cc_slips": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_cc_slips",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_cash_submitted": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_cash_submitted",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_cheques_submitted": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_cheques_submitted",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_cc_slips_submitted": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_cc_slips_submitted",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "note": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "note",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "closed_at": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "closed_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "transfer_opened_bills": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "transfer_opened_bills",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "closed_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "closed_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "store_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_sales": {
+      "name": "tec_sales",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "customer_id": {
+          "autoincrement": false,
+          "name": "customer_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "customer_name": {
+          "autoincrement": false,
+          "name": "customer_name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "autoincrement": false,
+          "name": "total",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_discount_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_discount_id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "product_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_tax_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_tax_id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "grand_total": {
+          "autoincrement": false,
+          "name": "grand_total",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_items": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_items",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_quantity": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paid": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "paid",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "created_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "updated_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_at": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "updated_at",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "note": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "note",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rounding": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "rounding",
+          "type": "decimal(10,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "store_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hold_ref": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "hold_ref",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "FK_sales_customers": {
+          "name": "FK_sales_customers",
+          "tableFrom": "tec_sales",
+          "tableTo": "tec_customers",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "restrict"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_sale_items": {
+      "name": "tec_sale_items",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sale_id": {
+          "autoincrement": false,
+          "name": "sale_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_id": {
+          "autoincrement": false,
+          "name": "product_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "unit_price": {
+          "autoincrement": false,
+          "name": "unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "net_unit_price": {
+          "autoincrement": false,
+          "name": "net_unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "discount",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "item_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "item_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "tax",
+          "type": "int(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "item_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "item_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subtotal": {
+          "autoincrement": false,
+          "name": "subtotal",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "real_unit_price": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "real_unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cost": {
+          "default": "'0.0000'",
+          "autoincrement": false,
+          "name": "cost",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "product_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_code",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "product_name": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "comment": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "comment",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_sessions": {
+      "name": "tec_sessions",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ip_address": {
+          "autoincrement": false,
+          "name": "ip_address",
+          "type": "varchar(45)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "timestamp",
+          "type": "int(10) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "data": {
+          "autoincrement": false,
+          "name": "data",
+          "type": "blob",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "ci_sessions_timestamp": {
+          "name": "ci_sessions_timestamp",
+          "columns": [
+            "timestamp"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_settings": {
+      "name": "tec_settings",
+      "columns": {
+        "setting_id": {
+          "autoincrement": false,
+          "name": "setting_id",
+          "type": "int(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "logo": {
+          "autoincrement": false,
+          "name": "logo",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "site_name": {
+          "autoincrement": false,
+          "name": "site_name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tel": {
+          "autoincrement": false,
+          "name": "tel",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dateformat": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "dateformat",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "timeformat": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "timeformat",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "default_email": {
+          "autoincrement": false,
+          "name": "default_email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "language": {
+          "autoincrement": false,
+          "name": "language",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "version": {
+          "default": "'''1.0'''",
+          "autoincrement": false,
+          "name": "version",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "theme": {
+          "autoincrement": false,
+          "name": "theme",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timezone": {
+          "default": "'''0'''",
+          "autoincrement": false,
+          "name": "timezone",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "protocol": {
+          "default": "'''mail'''",
+          "autoincrement": false,
+          "name": "protocol",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "smtp_host": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "smtp_host",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "smtp_user": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "smtp_user",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "smtp_pass": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "smtp_pass",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "smtp_port": {
+          "default": "'''25'''",
+          "autoincrement": false,
+          "name": "smtp_port",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "smtp_crypto": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "smtp_crypto",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mmode": {
+          "autoincrement": false,
+          "name": "mmode",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "captcha": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "captcha",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mailpath": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "mailpath",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "currency_prefix": {
+          "autoincrement": false,
+          "name": "currency_prefix",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "default_customer": {
+          "autoincrement": false,
+          "name": "default_customer",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "default_tax_rate": {
+          "autoincrement": false,
+          "name": "default_tax_rate",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rows_per_page": {
+          "autoincrement": false,
+          "name": "rows_per_page",
+          "type": "int(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_rows": {
+          "autoincrement": false,
+          "name": "total_rows",
+          "type": "int(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "header": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "header",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "footer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "footer",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "bsty": {
+          "autoincrement": false,
+          "name": "bsty",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "display_kb": {
+          "autoincrement": false,
+          "name": "display_kb",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "default_category": {
+          "autoincrement": false,
+          "name": "default_category",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "default_discount": {
+          "autoincrement": false,
+          "name": "default_discount",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_addition": {
+          "autoincrement": false,
+          "name": "item_addition",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "barcode_symbology": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "barcode_symbology",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pro_limit": {
+          "autoincrement": false,
+          "name": "pro_limit",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "decimals": {
+          "default": 2,
+          "autoincrement": false,
+          "name": "decimals",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "thousands_sep": {
+          "default": "''','''",
+          "autoincrement": false,
+          "name": "thousands_sep",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "decimals_sep": {
+          "default": "'''.'''",
+          "autoincrement": false,
+          "name": "decimals_sep",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "focus_add_item": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "focus_add_item",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "add_customer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "add_customer",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "toggle_category_slider": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "toggle_category_slider",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cancel_sale": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cancel_sale",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "suspend_sale": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "suspend_sale",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "print_order": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "print_order",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "print_bill": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "print_bill",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "finalize_sale": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "finalize_sale",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "today_sale": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "today_sale",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "open_hold_bills": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "open_hold_bills",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "close_register": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "close_register",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "java_applet": {
+          "autoincrement": false,
+          "name": "java_applet",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "receipt_printer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "receipt_printer",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pos_printers": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "pos_printers",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cash_drawer_codes": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "cash_drawer_codes",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "char_per_line": {
+          "default": 42,
+          "autoincrement": false,
+          "name": "char_per_line",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rounding": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "rounding",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pin_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "pin_code",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "stripe": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "stripe",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "stripe_secret_key": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "stripe_secret_key",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "stripe_publishable_key": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "stripe_publishable_key",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "purchase_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "purchase_code",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "envato_username": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "envato_username",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "theme_style": {
+          "default": "'''green'''",
+          "autoincrement": false,
+          "name": "theme_style",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "after_sale_page": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "after_sale_page",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "overselling": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "overselling",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "multi_store": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "multi_store",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "qty_decimals": {
+          "default": 2,
+          "autoincrement": false,
+          "name": "qty_decimals",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "symbol": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "symbol",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sac": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "sac",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "display_symbol": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "display_symbol",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "remote_printing": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "remote_printing",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "printer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "printer",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_printers": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_printers",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "auto_print": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "auto_print",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "local_printers": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "local_printers",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rtl": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "rtl",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "print_img": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "print_img",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ws_barcode_type": {
+          "default": "'''weight'''",
+          "autoincrement": false,
+          "name": "ws_barcode_type",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ws_barcode_chars": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "ws_barcode_chars",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "flag_chars": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "flag_chars",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "item_code_start": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "item_code_start",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "item_code_chars": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "item_code_chars",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_start": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "price_start",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_chars": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "price_chars",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_divide_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "price_divide_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "weight_start": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "weight_start",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "weight_chars": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "weight_chars",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "weight_divide_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "weight_divide_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_stores": {
+      "name": "tec_stores",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "code": {
+          "autoincrement": false,
+          "name": "code",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "logo": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "logo",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "phone": {
+          "autoincrement": false,
+          "name": "phone",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "address1": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "address1",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "address2": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "address2",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "city": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "city",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "state": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "state",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "postal_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "postal_code",
+          "type": "varchar(8)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "country": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "country",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "currency_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "currency_code",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "receipt_header": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "receipt_header",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "receipt_footer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "receipt_footer",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_suppliers": {
+      "name": "tec_suppliers",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf1": {
+          "autoincrement": false,
+          "name": "cf1",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf2": {
+          "autoincrement": false,
+          "name": "cf2",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "phone": {
+          "autoincrement": false,
+          "name": "phone",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_suspended_items": {
+      "name": "tec_suspended_items",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "suspend_id": {
+          "autoincrement": false,
+          "name": "suspend_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_id": {
+          "autoincrement": false,
+          "name": "product_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "unit_price": {
+          "autoincrement": false,
+          "name": "unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "net_unit_price": {
+          "autoincrement": false,
+          "name": "net_unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "discount",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "item_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "item_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "tax",
+          "type": "int(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "item_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "item_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subtotal": {
+          "autoincrement": false,
+          "name": "subtotal",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "real_unit_price": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "real_unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "product_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_code",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "product_name": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "comment": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "comment",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_suspended_sales": {
+      "name": "tec_suspended_sales",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "customer_id": {
+          "autoincrement": false,
+          "name": "customer_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "customer_name": {
+          "autoincrement": false,
+          "name": "customer_name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "autoincrement": false,
+          "name": "total",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_discount_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_discount_id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_discount": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_discount",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "product_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_tax_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_tax_id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "order_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_tax": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_tax",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "grand_total": {
+          "autoincrement": false,
+          "name": "grand_total",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_items": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_items",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_quantity": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "total_quantity",
+          "type": "decimal(15,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paid": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "paid",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "created_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_by": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "updated_by",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_at": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "updated_at",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "note": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "note",
+          "type": "varchar(1000)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hold_ref": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "hold_ref",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "store_id": {
+          "default": 1,
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_users": {
+      "name": "tec_users",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "last_ip_address": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "last_ip_address",
+          "type": "varbinary(45)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ip_address": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "ip_address",
+          "type": "varbinary(45)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "username": {
+          "autoincrement": false,
+          "name": "username",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "password": {
+          "autoincrement": false,
+          "name": "password",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "salt": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "salt",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "activation_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "activation_code",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "forgotten_password_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "forgotten_password_code",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "forgotten_password_time": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "forgotten_password_time",
+          "type": "int(11) unsigned",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "remember_code": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "remember_code",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_on": {
+          "autoincrement": false,
+          "name": "created_on",
+          "type": "int(11) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "last_login": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "last_login",
+          "type": "int(11) unsigned",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "active": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "active",
+          "type": "tinyint(1) unsigned",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "first_name": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "first_name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_name": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "last_name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "company": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "company",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "phone": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "phone",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "avatar": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "avatar",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "gender": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "gender",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "group_id": {
+          "default": 2,
+          "autoincrement": false,
+          "name": "group_id",
+          "type": "int(11) unsigned",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "store_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "store_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "group_id": {
+          "name": "group_id",
+          "columns": [
+            "group_id"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_user_logins": {
+      "name": "tec_user_logins",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "user_id": {
+          "autoincrement": false,
+          "name": "user_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "company_id": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "company_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ip_address": {
+          "autoincrement": false,
+          "name": "ip_address",
+          "type": "varbinary(16)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "login": {
+          "autoincrement": false,
+          "name": "login",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "time": {
+          "default": "'current_timestamp()'",
+          "autoincrement": false,
+          "name": "time",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tec_years": {
+      "name": "tec_years",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nom_année": {
+          "autoincrement": false,
+          "name": "nom_année",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "booléen": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "booléen",
+          "type": "tinyint(4)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    }
+  },
+  "views": {
+    "tec_salesview": {
+      "columns": {
+        "id": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf1": {
+          "autoincrement": false,
+          "name": "cf1",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf2": {
+          "autoincrement": false,
+          "name": "cf2",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "nombre",
+          "type": "bigint(21)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totals": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "totals",
+          "type": "decimal(47,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "montant_apayer": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "montant_apayer",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reste": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "reste",
+          "type": "decimal(48,4)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "isExisting": false,
+      "name": "tec_salesview",
+      "algorithm": "undefined",
+      "definition": "select `epim_spos`.`tec_customers`.`id` AS `id`,`epim_spos`.`tec_customers`.`name` AS `name`,`epim_spos`.`tec_customers`.`cf1` AS `cf1`,`epim_spos`.`tec_customers`.`cf2` AS `cf2`,count(0) AS `nombre`,sum(`epim_spos`.`tec_sales`.`total`) AS `totals`,`epim_spos`.`tec_customers`.`montant_apayer` AS `montant_apayer`,`epim_spos`.`tec_customers`.`montant_apayer` - sum(`epim_spos`.`tec_sales`.`total`) AS `reste` from (`epim_spos`.`tec_customers` join `epim_spos`.`tec_sales` on(`epim_spos`.`tec_sales`.`customer_id` = `epim_spos`.`tec_customers`.`id`)) where `epim_spos`.`tec_customers`.`cf1` in ('FP - TSGE','FP - TSDI','FP - TGI','FP - TI') group by `epim_spos`.`tec_customers`.`id` order by `epim_spos`.`tec_customers`.`cf1`",
+      "sqlSecurity": "definer"
+    },
+    "viewech": {
+      "columns": {
+        "id": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf1": {
+          "autoincrement": false,
+          "name": "cf1",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cf2": {
+          "autoincrement": false,
+          "name": "cf2",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "nombre",
+          "type": "bigint(21)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totals": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "totals",
+          "type": "decimal(47,4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nbrEch": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "nbrEch",
+          "type": "bigint(21)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "isExisting": false,
+      "name": "viewech",
+      "algorithm": "undefined",
+      "definition": "select `epim_spos`.`tec_customers`.`id` AS `id`,`epim_spos`.`tec_customers`.`name` AS `name`,`epim_spos`.`tec_customers`.`cf1` AS `cf1`,`epim_spos`.`tec_customers`.`cf2` AS `cf2`,count(0) AS `nombre`,sum(`epim_spos`.`tec_sales`.`total`) AS `totals`,count(`epim_spos`.`tec_sale_items`.`id`) AS `nbrEch` from ((`epim_spos`.`tec_customers` join `epim_spos`.`tec_sales` on(`epim_spos`.`tec_sales`.`customer_id` = `epim_spos`.`tec_customers`.`id`)) join `epim_spos`.`tec_sale_items` on(`epim_spos`.`tec_sales`.`id` = `epim_spos`.`tec_sale_items`.`sale_id`)) group by `epim_spos`.`tec_customers`.`id`",
+      "sqlSecurity": "definer"
+    },
+    "tec_details_payments": {
+      "columns": {
+        "customer_id": {
+          "autoincrement": false,
+          "name": "customer_id",
+          "type": "int(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "product_name": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "product_name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "customer_name": {
+          "autoincrement": false,
+          "name": "customer_name",
+          "type": "varchar(55)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Total": {
+          "default": "'0.00000000'",
+          "autoincrement": false,
+          "name": "Total",
+          "type": "decimal(40,8)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "unit_price": {
+          "autoincrement": false,
+          "name": "unit_price",
+          "type": "decimal(25,4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "default": "'NULL'",
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "isExisting": false,
+      "name": "tec_details_payments",
+      "algorithm": "undefined",
+      "definition": "select `epim_spos`.`tec_sales`.`customer_id` AS `customer_id`,`epim_spos`.`tec_sale_items`.`product_name` AS `product_name`,`epim_spos`.`tec_sales`.`customer_name` AS `customer_name`,`epim_spos`.`tec_sale_items`.`quantity` * `epim_spos`.`tec_sale_items`.`unit_price` AS `Total`,`epim_spos`.`tec_sales`.`date` AS `date`,`epim_spos`.`tec_sale_items`.`unit_price` AS `unit_price`,`epim_spos`.`tec_sales`.`status` AS `status` from (`epim_spos`.`tec_sales` join `epim_spos`.`tec_sale_items` on(`epim_spos`.`tec_sales`.`id` = `epim_spos`.`tec_sale_items`.`sale_id`))",
+      "sqlSecurity": "definer"
+    }
+  },
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {},
+    "indexes": {}
+  }
+}
