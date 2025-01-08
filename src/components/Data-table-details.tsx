@@ -2,7 +2,6 @@
 
 import {
   ColumnDef,
-  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -17,44 +16,26 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ChangeEvent, useState } from "react";
-import SearchBar from "./SearchBar";
-import Footer from "./customComponents/footer";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
 
-export function DataTable<TData, TValue>({
+export function DataTableDetail<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     columnResizeMode: "onChange",
-    onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    state: {
-      columnFilters,
-    },
   });
-
-  function onSearchChange(event: ChangeEvent<HTMLInputElement>): void {
-    return table.getColumn("studentName")?.setFilterValue(event.target.value);
-  }
 
   return (
     <div className="mt-6 flex flex-col">
-      <SearchBar
-        value={
-          (table.getColumn("studentName")?.getFilterValue() as string) ?? ""
-        }
-        onChange={onSearchChange}
-      />
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -108,7 +89,6 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <Footer />
     </div>
   );
 }

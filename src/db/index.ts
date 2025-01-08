@@ -5,7 +5,6 @@ const db = drizzle({
   connection: { uri: process.env.DATABASE_URL! },
   schema,
   mode: "planetscale",
-  logger: true,
 });
 
 export type db = typeof db;
